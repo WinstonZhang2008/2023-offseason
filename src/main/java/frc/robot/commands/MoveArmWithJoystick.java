@@ -1,14 +1,14 @@
-import frc.robot.subsystems.arm.ArmSubsystem;
+package frc.robot.commands;
 
-import edu.wpi.first.math.controller.ArmFeedforward;
-import edu.wpi.first.math.util.Units;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.ArmSubsystem;
 
 
 public class MoveArmWithJoystick extends CommandBase {
-  ArmSubsystem armSubsystem = new ArmSubsystem();
-  XboxController driverJoyStick = new XboxController(1);
+  private ArmSubsystem armSubsystem;
+  private XboxController driverJoyStick;
+  
   public MoveArmWithJoystick(ArmSubsystem armSubsystem, XboxController driverJoystick) {
     this.armSubsystem = armSubsystem;
     this.driverJoyStick = driverJoystick;

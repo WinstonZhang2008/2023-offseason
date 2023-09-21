@@ -18,6 +18,7 @@ public class RobotContainer {
 
   public RobotContainer() {
     configureButtonBindings();
+    setDefaultCommands();
   }
 
   private void configureButtonBindings() {}
