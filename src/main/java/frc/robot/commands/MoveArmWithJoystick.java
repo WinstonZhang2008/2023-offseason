@@ -8,10 +8,12 @@ public class MoveArmWithJoystick extends CommandBase {
   /** Creates a new MoveArmWithJoystick. */
 
   //initialize your subsystems, controllers
-  XboxController joystick1;
+  private XboxController joystick1;
+  private ArmSubsystem armSubsystem;
   public MoveArmWithJoystick(ArmSubsystem armSubsystem, XboxController joystick1) {
     //add your parameters to the command
     // Use addRequirements() here to declare subsystem dependencies.
+    this.armSubsystem = armSubsystem;
     this.joystick1 = joystick1;
   }
 
@@ -21,6 +23,7 @@ public class MoveArmWithJoystick extends CommandBase {
   @Override
   public void execute() {
     double joystickArmPower = joystick1.getLeftY(); //use this joystick armpower to set power to your motors
+    armSubsystem.setPower(joystickArmPower);
   }
 
 
